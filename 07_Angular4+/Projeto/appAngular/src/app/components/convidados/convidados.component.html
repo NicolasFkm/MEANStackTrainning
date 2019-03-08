@@ -1,0 +1,57 @@
+<div class="margem">
+    <div class="container">
+        <h1 class="text-center margem">Convidados</h1>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 margem">
+                <div class="form-group">
+                    <label for="evento">Selecione o evento desejado:</label>
+                    <select name="evento" class="form-control" (change)="listaConvidados($event.target.value)">
+                        <option *ngFor="let evento of eventos" [value]="evento['_id']">{{ evento.descricao }}</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div *ngIf="convidados.length == 0; else lista">
+                    <h3>Nenhum Convidado</h3>
+                </div>
+                <ng-template #lista>
+
+                    <ul class="list-group">
+                        <li *ngFor="let item of convidados" class="list-group-item">
+                            {{item.nome | uppercase}}
+                        </li>
+                    </ul>
+
+                </ng-template>
+            </div>
+            <!-- <div *ngIf="selectedValue"> -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input [(ngModel)]="convidado.nome" type="text" class="form-control" id="nome" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input [(ngModel)]="convidado.email" type="text" class="form-control" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="cpf">CPF:</label>
+                        <input [(ngModel)]="convidado.cpf" type="text" class="form-control" id="cpf" name="cpf">
+                    </div>
+                    <div class="form-group">
+                        <button (click)="adicionarConvidado()" type="button" class="btn btn-info">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            Incluir
+                        </button>
+                    </div>
+                </div>
+
+            <!-- </div> -->
+        </div>
+
+    </div>
+</div>

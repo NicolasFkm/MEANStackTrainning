@@ -1,0 +1,47 @@
+<div class="container margem">
+    <h1>Cadastro de Eventos</h1>
+    <hr/>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label for="codigo">Informe o nome do evento:</label>
+            <input type="text" #busca (keyup)="0" class="form-control">
+        </div>
+    </div>
+    <div class="row margem">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li *ngFor="let item of listaEventos | sublista:busca.value" [class.selecionado]="item===eventoSelecionado" (click)="selecionarEvento(item)" class="list-group-item">
+                    <a [routerLink]="['/eventos']">{{item.descricao | uppercase}}</a>
+                </li>
+            </ul>
+            
+            <button (click)="novoEvento()" class="btn btn-info">
+                <span class="glyphicon glyphicon-plus"></span>
+                Novo
+            </button>
+        </div>
+        
+        <div *ngIf="eventoSelecionado">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <input [(ngModel)]="eventoSelecionado.descricao" type="text" class="form-control" id="descricao" name="descricao">
+                </div>
+                <div class="form-group">
+                    <label for="data">Data:</label>
+                    <input [(ngModel)]="eventoSelecionado.data" type="date" class="form-control" id="data" name="data">
+                </div>
+                <div class="form-group">
+                    <label for="preco">Preço:</label>
+                    <input [(ngModel)]="eventoSelecionado.preco" type="number" class="form-control" id="preco" name="preco">
+                </div>
+                <div class="form-group">
+                    <button (click)="adicionarEvento(eventoSelecionado)" type="button" class="btn btn-info">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        Incluir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
