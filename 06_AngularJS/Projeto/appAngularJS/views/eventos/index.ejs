@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="appAngular">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Aplicação AngularJS</title>
+</head>
+
+<body ng-controller="PrincipalController as prCtrl">
+    <h1>Cadastro e Consulta de Eventos</h1>
+    <h2>Lista de Eventos</h2>
+
+    <table>
+        <tr>
+            <th>Descrição</th>
+            <th>Data</th>
+            <th>Preço</th>
+        </tr>
+        <tbody>
+            <tr ng-repeat="evento in prCtrl.items">
+                <td>{{evento.descricao}}</td>
+                <td>{{evento.data | date:'dd/MM/yyyy'}}</td>
+                <td>{{evento.preco | currency}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Inclusão de um novo evento</h2>
+    <div>
+        <form name="incluirForm" ng-submit="prCtrl.addEvento()">
+            Descrição do evento:
+            <br/>
+            <input type="text" ng-model="prCtrl.novoEvento.descricao" />
+            <br/>Data (dd/mm/yyyy):
+            <br />
+            <input type="text" ng-model="prCtrl.novoEvento.data" />
+            <br/>Preço:
+            <br />
+            <input type="text" ng-model="prCtrl.novoEvento.preco" />
+            <br />
+            <input type="submit" value="Adicionar" />
+        </form>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="/javascripts/script.js"></script>
+</body>
+
+</html>

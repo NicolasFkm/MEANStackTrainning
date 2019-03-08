@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="appAngular">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array</title>
+</head>
+
+<body ng-controller="Principal as ctlP">
+
+    <h2>Lista de Alunos</h2>
+
+    <div ng-repeat="nome in ctlP.nomes">
+        {{nome}}
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script>
+        angular
+            .module('appAngular', [])
+            .controller('Principal', [function () {
+                this.nomes = [
+                    'Guilherme',
+                    'Fabio',
+                    'Adriano',
+                    'Pablo',
+                    'Saleh',
+                    'Rodolfo',
+                    'Francielle',
+                    'Victor',
+                    'Paulo',
+                    'Nicolas'
+                ];
+            }]);
+
+    </script>
+</body>
+
+</html>

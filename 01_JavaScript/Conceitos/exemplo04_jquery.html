@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .ok{
+            border: 1px solid green;
+            background: lightgreen;
+            color: green;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .erro{
+            border: 1px solid red;
+            background: lightpink;
+            color: red;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+        <div>
+            <label for="nome">Nome: </label><br/>
+            <input id="nome" name="nome" type="text" /><br/>
+            <label for="idade">Idade: </label><br/>
+            <input id="idade" name="idade" type="number" /><br/>
+            <input id="btnEnviar" type="button" value="ENVIAR">
+        </div>
+
+        <div id="resposta"></div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="./exemplo04_jquery.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{
+  "eventos": [
+    {
+      "descricao": "Teste watch",
+      "data": "2019-02-15",
+      "preco": 105,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "descricao": "Baixar JSON Server",
+      "data": "2019-01-23",
+      "preco": 5
+    },
+    {
+      "descricao": "Teste Postman",
+      "data": "2019-02-15",
+      "preco": "15",
+      "id": 3
+    },
+    {
+      "descricao": "Teste Postman 2",
+      "data": "2019-02-15",
+      "preco": 15,
+      "id": 4
+    },
+    {
+      "descricao": "Teste Postman 2",
+      "data": "2019-02-15",
+      "preco": 15,
+      "exemplo": 84541,
+      "id": 5
+    },
+    {
+      "descricao": "NOVO Evento",
+      "data": "20/04/2019",
+      "preco": 6,
+      "id": 6
+    }
+  ]
+}

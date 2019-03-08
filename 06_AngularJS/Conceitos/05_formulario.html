@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="appAngular">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulário Angular</title>
+</head>
+
+<body ng-controller="Principal as ctlP">
+
+    <h2>Formulário - Parte 1</h2>
+    <form ng-submit="ctlP.submit1()">
+        <input type="text" ng-model="ctlP.nome" placeholder="Nome">
+        <br>
+        <input type="text" ng-model="ctlP.curso" placeholder="Curso">
+        <br>
+        <input type="submit" value="Submit 1">
+    </form>
+
+    <h2>Formulário - Parte 2</h2>
+    <form ng-submit="ctlP.submit2()">
+        <input type="text" ng-model="ctlP.aluno.nome" placeholder="Nome">
+        <br>
+        <input type="text" ng-model="ctlP.aluno.curso" placeholder="Curso">
+        <br>
+        <input type="submit" value="Submit 2">
+    </form>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script>
+        angular.module('appAngular', [])
+            .controller('Principal', [function () {
+                var self = this;
+
+                // Modo explícito
+                self.submit1 = function () {
+                    var aluno = {
+                        nome: self.nome,
+                        curso: self.curso
+                    }
+                    alert(`Dado do primeiro formulário: \n ${aluno.nome} do curso ${aluno.curso}`);
+                };
+
+                // Modo implícito
+                self.submit2 = function () {
+                    alert(`Dado do segundo formulário: \n ${self.aluno.nome} do curso ${self.aluno.curso}`);
+                };
+            }]);
+
+    </script>
+</body>
+
+</html>

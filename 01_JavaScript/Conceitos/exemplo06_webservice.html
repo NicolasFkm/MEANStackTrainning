@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+</head>
+
+<body>
+    <div class="row">
+        <div class="col offset-s1 s10">
+
+            <h1 class="teal-text text-darken-1">Contatos</h1>
+            <div class="input-field">
+                <label for="nome">Nome:</label>
+                <br/>
+                <input type="text" name="nome" id="nome" />
+                <br>
+            </div>
+            <div class="input-field">
+                <label for="telefone">Telefone:</label>
+                <br/>
+                <input type="text" name="telefone" id="telefone" />
+                <br>
+            </div>
+            <div class="input-field">
+                <label for="data">Data Nascimento:</label>
+                <br/>
+                <input type="date" name="data" id="data" />
+                <br>
+            </div>
+
+            <div class="col s6">
+                <input class="btn green col s12" type="button" value="Enviar" id="acaoEnviar" />
+            </div>
+            <div class="col s6">
+                <input class="btn black col s12" type="button" value="Ler" id="acaoLer" />
+            </div>
+
+            <br/>
+            <br/>
+            <br/>
+            <table class="striped table-responsive teal darken-1 col s12 white-text centered">
+                <thead class="center-text teal darken-4">
+                    <tr>
+                        <th class="">Nome</th>
+                        <th class="">Telefone</th>
+                        <th class="">Data Nascimento</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./exemplo06_webservice.js"></script>
+</body>
+
+</html>

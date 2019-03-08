@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exemplo 1</title>
+    <script>
+        function exibir() {
+            let nome = document.getElementById("nome").value;
+            let idade = document.getElementById("idade").value;
+            // let maioridade = (idade < 18)? "Maior de Idade":"Menor de Idade";
+            
+            let msg = `Nome = ${nome} \nIdade = ${idade} anos`;
+
+            if(idade < 18){
+                msg += "\nMenor de Idade";
+            }
+            else if(idade == 18){
+                msg += "\nPossui exatamente 18 anos";
+            }
+            else{
+                msg += "\nMaior de Idade";
+            }
+
+
+            alert(msg);
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <label for="nome">Nome: </label>
+        <input id="nome" name="nome" type="text" /><br/>
+        <label for="idade">Idade: </label>
+        <input id="idade" name="idade" type="number" /><br/>
+        <input type="button" value="ENVIAR" onclick="exibir()">
+    </div>
+    <a href="./exemplo02_js.html">Próximo Exemplo</a>
+</body>
+
+</html>
